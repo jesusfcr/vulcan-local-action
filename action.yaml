@@ -1,0 +1,27 @@
+name: 'Adevinta Vulcan Action'
+description: 'Scans your repository for vulnerabilities vulcan'
+author: 'Adevinta'
+inputs:
+  config:
+    description: 'Path or uri (file:// http://) to a vulcan config yaml'
+    required: false
+    default: ''
+  checkTypes:
+    description: 'Path or uri to a checktypes definition'
+    required: false
+    default: ''
+  target:
+    description: 'Target to scan (eg ., http://localhost:1234'
+    required: false
+    default: ''
+  assetType:
+    description: 'Asset type of the target (eg. DockerImage, GitRepository, WebAddress, ...)'
+    required: false
+    default: ''
+  severity:
+    description: 'Severity (eg. CRITICAL HIGH MEDIUM LOW INFO)'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: "Dockerfile"
